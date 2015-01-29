@@ -11,12 +11,6 @@ class Spree::BlogEntry < ActiveRecord::Base
   scope :visible, -> { where :visible => true }
   scope :recent, lambda{|max=5| visible.limit(max) }
 
-  if Spree.user_class
-    belongs_to :author, :class_name => Spree.user_class.to_s
-  else
-    belongs_to :author
-  end
-
   has_one :blog_entry_image, :as => :viewable, :dependent => :destroy, :class_name => 'Spree::BlogEntryImage'
   accepts_nested_attributes_for :blog_entry_image, :reject_if => :all_blank
 
@@ -45,10 +39,6 @@ class Spree::BlogEntry < ActiveRecord::Base
 
   def self.by_category(category_name)
     tagged_with(category_name, :on => :categories)
-  end
-
-  def self.by_author(author)
-    where(:author_id => author)
   end
 
   # data for news archive widget, only visible entries

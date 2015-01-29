@@ -2,29 +2,26 @@ require 'spec_helper'
 
 describe "BlogEntries" do
   before(:each) do
-    @author = create(:user, :email => "me@example.com", :nickname => "Torony Polser")
-    @author.spree_roles << Spree::Role.find_or_create_by(name: 'blogger')
 
-    @blog_entry = create(:blog_entry, 
-      :title => "First blog entry", 
-      :body => "Body of the blog entry.", 
+    @blog_entry = create(:blog_entry,
+      :title => "First blog entry",
+      :body => "Body of the blog entry.",
       :summary => "Summary of the blog entry.",
-      :author => @author,
       :published_at => DateTime.new(2020, 3, 11))
     @blog_entry.tag_list = "baz, bob"
     @blog_entry.category_list = "cat1"
     @blog_entry.save!
 
-    @blog_entry2 = create(:blog_entry, 
-      :title => "Another blog entry", 
-      :body => "Another body.", 
+    @blog_entry2 = create(:blog_entry,
+      :title => "Another blog entry",
+      :body => "Another body.",
       :summary => "",
       :published_at => DateTime.new(2020, 2, 4))
     @blog_entry2.tag_list = "bob, ben"
     @blog_entry2.category_list = "cat1, cat2"
     @blog_entry2.save!
 
-    @blog_entry3 = create(:blog_entry, 
+    @blog_entry3 = create(:blog_entry,
       :title => "Invisible blog entry",
       :visible => false,
       :published_at => DateTime.new(2020, 3, 11))
@@ -47,10 +44,6 @@ describe "BlogEntries" do
       visit "/blog"
       find('#content').should have_content("Summary of the blog entry.")
       find('#content').should have_content("Another body.")
-    end
-    it "should display the blog author" do
-      visit "/blog"
-      find('#content').should have_content("Torony Polser")
     end
     it "should display the blog entry tags" do
       visit "/blog"
@@ -93,11 +86,6 @@ describe "BlogEntries" do
     it "should display the published_at date" do
       visit "/blog/2020/03/11/first-blog-entry"
       find('#content').should have_content("11 Mar 2020")
-    end    
-    it "should include google authorship" do    
-      @author.update_attribute(:google_plus_url, 'https://example.com/123/')
-      visit "/blog/2020/03/11/first-blog-entry"
-      page.should have_css("link[rel='author'][href='https://example.com/123/']", visible: false)
     end
   end
 
@@ -156,26 +144,6 @@ describe "BlogEntries" do
     end
   end
 
-  context "author page" do
-    it "should display the author's blog entries" do
-      visit "/blog/author/Torony%20Polser"
-      find('#content').should have_content("First blog entry")
-      find('#content').should have_content("Summary of the blog entry.")
-    end
-    it "should display the author's details" do
-      @author.update_attribute(:website_url, 'http://example.com/')
-      @author.update_attribute(:bio_info, 'The author summary.')
-      visit "/blog/author/Torony%20Polser"
-      find('#content').should have_content("Torony Polser")
-      find('#content').should have_content("example.com")
-      find('#content').should have_content("The author summary.")
-    end
-    it "should display another author's blog entries" do
-      visit "/blog/author/Torony%20Polser"
-      find('#content').should_not have_content("Another blog entry")
-      find('#content').should_not have_content("Another body")
-    end
-  end
 
   context "category page" do
     it "should display the blog entries" do

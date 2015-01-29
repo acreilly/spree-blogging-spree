@@ -51,17 +51,6 @@ describe "Blog Entry" do
       find_field('blog_entry_permalink').value.should == "some-permalink-path"
     end
 
-    it "should add an author to a blog entry" do
-      user = create(:user, :email => "me@example.com")
-      user.spree_roles << Spree::Role.find_or_create_by(name: 'blogger')
-      within_row(1) { click_icon :edit }
-      select "me@example.com", :from => 'Author'
-      click_on 'Update'
-      page.should have_content("Blog Entry has been successfully updated")
-      page.should have_content("me@example.com")
-      find_field('blog_entry_author_id').value.should == user.id.to_s
-    end
-
     it "should add a featured image to a blog entry" do
       file_path = Rails.root + "../../spec/support/image.png"
 
