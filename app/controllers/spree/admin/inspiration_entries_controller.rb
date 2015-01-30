@@ -1,11 +1,11 @@
-class Spree::Admin::BlogEntriesController < Spree::Admin::ResourceController
-  helper 'spree/blog_entries'
+class Spree::Admin::InspirationEntriesController < Spree::Admin::ResourceController
+  helper 'spree/inspiration_entries'
 
 
   private
 
     def location_after_save
-      edit_admin_blog_entry_url(@blog_entry)
+      edit_admin_inspiration_entry_url(@inspiration_entry)
     end
 
     def collection

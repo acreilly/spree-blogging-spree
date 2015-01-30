@@ -1,0 +1,9 @@
+<div class="inspiration_entry_details">
+  <%= Spree.t(:posted_on) %> <span class="inspiration_entry_date"><%= l(inspiration_entry.published_at, :format => :inspiration_date) %></span>
+  <% unless inspiration_entry.category_list.empty? %>
+    <%= Spree.t(:posted_in) %> <%= inspiration_entry_category_list_html inspiration_entry %>.
+  <% end %>
+  <% unless inspiration_entry.tag_list.empty? %>
+    <%= Spree.t(:tagged) %> <%= inspiration_entry_tag_list_html inspiration_entry %>.
+  <% end %>
+</div>

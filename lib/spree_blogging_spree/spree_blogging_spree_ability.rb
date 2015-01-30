@@ -1,8 +1,8 @@
-class SpreeBloggingSpreeAbility
+class SpreeInspirationSpreeAbility
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Spree::BlogEntry
-    can :index, Spree::BlogEntry
+    can :read, Spree::InspirationEntry
+    can :index, Spree::InspirationEntry
   end
 end

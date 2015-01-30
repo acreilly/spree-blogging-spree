@@ -1,3 +1,3 @@
 Spree::AppConfiguration.class_eval do
-  preference :blog_alias, :string, default: 'blog'
+  preference :inspiration_alias, :string, default: 'inspiration'
 end

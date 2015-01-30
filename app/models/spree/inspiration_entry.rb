@@ -1,6 +1,6 @@
 require 'acts-as-taggable-on'
 
-class Spree::BlogEntry < ActiveRecord::Base
+class Spree::InspirationEntry < ActiveRecord::Base
   acts_as_taggable_on :tags, :categories
   before_save :create_permalink
   before_save :set_published_at
@@ -11,8 +11,8 @@ class Spree::BlogEntry < ActiveRecord::Base
   scope :visible, -> { where :visible => true }
   scope :recent, lambda{|max=5| visible.limit(max) }
 
-  has_one :blog_entry_image, :as => :viewable, :dependent => :destroy, :class_name => 'Spree::BlogEntryImage'
-  accepts_nested_attributes_for :blog_entry_image, :reject_if => :all_blank
+  has_one :inspiration_entry_image, :as => :viewable, :dependent => :destroy, :class_name => 'Spree::InspirationEntryImage'
+  accepts_nested_attributes_for :inspiration_entry_image, :reject_if => :all_blank
 
   def entry_summary(chars=200)
     if summary.blank?
@@ -42,7 +42,7 @@ class Spree::BlogEntry < ActiveRecord::Base
   end
 
   # data for news archive widget, only visible entries
-  def self.organize_blog_entries
+  def self.organize_inspiration_entries
     Hash.new.tap do |entries|
       years.each do |year|
         months_for(year).each do |month|

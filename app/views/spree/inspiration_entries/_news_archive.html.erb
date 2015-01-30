@@ -1,22 +1,22 @@
-<div class="blog_news_archve_wrapper">
-  <h6><%= Spree.t('blog.archive') %></h6>
+<div class="inspiration_news_archve_wrapper">
+  <h6><%= Spree.t('inspiration.archive') %></h6>
   <ul id="news-archive">
     <% news_archive.to_a.reverse.each do |year, months_with_entries| %>
       <% d = DateTime.parse("1/#{year}") %>
 
       <li> <span></span>
-        <%= link_to(year, blog_archive_path(:year => d.year)) %>
+        <%= link_to(year, inspiration_archive_path(:year => d.year)) %>
 
         <ul class="months">
           <% months_with_entries.each do |month, entries| %>
             <% d = DateTime.parse("#{year}, #{month}") %>
 
             <li> <span></span>
-              <%= link_to I18n.l(d, :format => "%B"), blog_archive_path(:year => d.year, :month => d.month) %>
+              <%= link_to I18n.l(d, :format => "%B"), inspiration_archive_path(:year => d.year, :month => d.month) %>
 
               <ul class="posts">
                 <% entries.each do |entry| %>
-                  <li><%= link_to(entry.title, blog_entry_permalink(entry)) %></li>
+                  <li><%= link_to(entry.title, inspiration_entry_permalink(entry)) %></li>
                 <% end %>
               </ul>
             </li>

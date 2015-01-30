@@ -1,3 +1,3 @@
-Spree::StoreController.class_eval do 
-  helper 'spree/blog_entries'
+Spree::StoreController.class_eval do
+  helper 'spree/inspiration_entries'
 end

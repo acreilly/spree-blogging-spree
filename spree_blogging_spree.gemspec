@@ -1,10 +1,10 @@
 # encoding: UTF-8
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_blogging_spree'
+  s.name        = 'spree_inspiration_spree'
   s.version     = '2.4.0'
-  s.summary     = 'BloggingSpree: A Spree blogging solution'
-  s.description = 'A basic blogging solution for use with the Spree E-Commerce platform.'
+  s.summary     = 'InspirationSpree: A Spree inspiration solution'
+  s.description = 'A basic inspiration solution for use with the Spree E-Commerce platform.'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author    = 'Stefan Senk, Sumit Sharma'

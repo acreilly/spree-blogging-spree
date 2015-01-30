@@ -1,0 +1,11 @@
+<div class="inspiration_tag_cloud_wrapper">
+  <h6><%= Spree.t('inspiration.tags') %></h6>
+  <ul class="inspiration_tag_cloud">
+    <% tags = Spree::InspirationEntry.visible.tag_counts_on(:tags) %>
+    <% tag_cloud(tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+      <li>
+        <%= link_to tag.name, inspiration_tag_path(tag.name), :class => css_class %>
+      </li>
+    <% end %>
+  </ul>
+</div>

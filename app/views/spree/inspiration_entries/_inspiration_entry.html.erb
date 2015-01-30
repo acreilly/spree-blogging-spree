@@ -1,0 +1,8 @@
+<h2><%= link_to inspiration_entry.title, inspiration_entry_permalink(inspiration_entry) %></h2>
+
+<div class="inspiration_entry_summary">
+  <%== inspiration_entry.entry_summary %>
+  <span class="inspiration_read_more"><%= link_to Spree.t(:inspiration_read_more), inspiration_entry_permalink(inspiration_entry) %></span>
+</div>
+
+<%= render :partial => 'spree/inspiration_entries/inspiration_entry_details', :locals => {:inspiration_entry => inspiration_entry} %>

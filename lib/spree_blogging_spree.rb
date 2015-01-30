@@ -1,3 +1,3 @@
 require 'spree_core'
-require 'spree_blogging_spree/engine'
-require 'spree_blogging_spree/spree_blogging_spree_ability'
+require 'spree_inspiration_spree/engine'
+require 'spree_inspiration_spree/spree_inspiration_spree_ability'
