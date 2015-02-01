@@ -12,12 +12,24 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
 .inspiration_entry_summary{
   margin: 10px 0;
 }
+
 ul#inspiration_entry_entries {
   list-style: none;
 
-  li { margin-bottom: 20px; }
+  li {
+    list-style: none;
+      margin: 20px 0;
+  }
 }
-
+.inspiration_entry_details{
+  margin: 10px 0;
+}
+#inspiration_entry_container{
+  margin: 50px 0;
+}
+#wrapper #sidebar{
+  min-height: 650px;
+}
 /* tag cloud widget */
 .inspiration_tag_cloud {
   margin-bottom: 10px;

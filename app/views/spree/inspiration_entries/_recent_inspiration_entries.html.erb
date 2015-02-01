@@ -6,7 +6,7 @@
         <li>
           <%= link_to(inspiration_entry_permalink(inspiration_entry)) do %>
             <%= inspiration_entry.title %>
-            <span class="inspiration_entry_date"><%= "#{time_ago_in_words inspiration_entry.published_at} #{Spree.t('inspiration.ago')}" %></span>
+            <span class="inspiration_entry_date"><%= "#{time_ago_in_words inspiration_entry.published_at} ago" %></span>
           <% end %>
         </li>
       <% end %>
