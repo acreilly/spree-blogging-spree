@@ -14,6 +14,7 @@
       <%== @inspiration_entry.body %>
     </div>
 
+    <%= render :partial => 'spree/inspiration_entries/inspiration_pinterest_board', :locals => {:inspiration_entry => @inspiration_entry} %>
     <%= render :partial => 'spree/inspiration_entries/inspiration_entry_details', :locals => {:inspiration_entry => @inspiration_entry} %>
   </div>
 

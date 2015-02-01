@@ -14,6 +14,11 @@
       <%= form.error_message_on :permalink %>
     <% end %>
 
+    <%= form.field_container :pinterest_url do %>
+      <%= form.label :pinterest_url, Spree.t(:pinterest_url)  %><br />
+      <%= form.text_field :pinterest_url, :class => 'fullwidth' %>
+    <% end %>
+
     <%= form.field_container :category_list do %>
       <%= form.label :category_list, Spree.t(:category_list)  %><br />
       <%= form.text_field :category_list, :class => 'fullwidth' %>

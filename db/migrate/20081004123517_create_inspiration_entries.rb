@@ -4,6 +4,7 @@ class CreateInspirationEntries < ActiveRecord::Migration
       t.column :title, :string
       t.column :body, :text
       t.column :permalink, :string
+      t.column :pinterest_url, :string
       t.timestamps
     end
   end
