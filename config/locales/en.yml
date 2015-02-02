@@ -62,4 +62,4 @@ en:
       archive: Archive
   time:
     formats:
-      inspiration_date: "%e %b %Y"
+      inspiration_date: "%B %e, %Y"
