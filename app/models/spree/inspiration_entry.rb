@@ -6,6 +6,7 @@ class Spree::InspirationEntry < ActiveRecord::Base
   before_save :set_published_at
   validates_presence_of :title
   validates_presence_of :body
+  validates_presence_of :summary
 
   default_scope { order("published_at DESC") }
   scope :visible, -> { where :visible => true }

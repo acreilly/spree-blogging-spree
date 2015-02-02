@@ -1,15 +1,12 @@
-<% content_for :head do %>
-<% end %>
-
-<% content_for :sidebar do %>
-  <%= render :partial => 'spree/inspiration_entries/inspiration_sidebar' %>
-<% end %>
-
 <div id="inspiration_entry_container">
   <div id="inspiration_entry_entry">
 
-    <h1><%= @inspiration_entry.title %></h1>
-
+    <h1 id="inspiration"><%= @inspiration_entry.title %></h1>
+  <% unless @inspiration_entry.inspiration_entry_image.nil? %>
+    <div class="inspiration_entry_image">
+      <%= image_tag @inspiration_entry.inspiration_entry_image.attachment.url(:large) %>
+    </div>
+  <% end %>
     <div class="inspiration_entry_body">
       <%== @inspiration_entry.body %>
     </div>

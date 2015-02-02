@@ -1,10 +1,9 @@
 <% categories = Spree::InspirationEntry.visible.tag_counts_on(:categories).sort_by(&:count) %>
 <% if categories.present? %>
-  <div class="inspiration_categories_list_wrapper">
-    <h6><%= Spree.t('inspiration.categories') %></h6>
+  <div class="inspiration_categories_list_wrapper col-md-12">
     <ul class="inspiration_categories_list">
       <% categories.reverse.each do |category| %>
-        <li><%= link_to category.name, inspiration_category_path(category.name) %> (<%= category.count %>)</li>
+        <li><%= link_to category.name, inspiration_category_path(category.name) %></li>
       <% end %>
     </ul>
   </div>

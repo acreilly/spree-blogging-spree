@@ -2,7 +2,10 @@
 Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/frontend/all.css'
 */
-
+#inspiration{
+  text-align: center;
+  font-style: italic;
+}
 .inspiration_author_info {
   margin-bottom: 30px;
 }
@@ -10,17 +13,50 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
   margin: 10px 0;
 }
 .inspiration_entry_summary{
-  margin: 10px 0;
+  display: inline-block;
+  text-align: center;
+  h3{
+    font-size: 18px;
+    margin: 0;
+  }
+  .inspiration_read_more{
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  p{
+    font-size: 12px;
+    margin: 0;
+  }
+  .inspiration_entry_image{
+    img{
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 ul#inspiration_entry_entries {
   list-style: none;
-
+  margin: 0 auto;
   li {
     list-style: none;
-      margin: 20px 0;
+    margin: 20px 0;
   }
 }
+.inspiration_categories_list_wrapper{
+  width: 100%;
+  text-align: center;
+  ul.inspiration_categories_list{
+    list-style: none;
+    margin: 0 auto;
+    li{
+      display: inline-block;
+      margin: 0 20px;
+      text-align: center;
+    }
+  }
+}
+
 .inspiration_entry_details{
   margin: 10px 0;
 }

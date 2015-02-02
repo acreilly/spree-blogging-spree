@@ -1,8 +1,8 @@
-<div id="inspiration_entry_container" class="columns twelve omega">
+<div id="inspiration_entry_container">
   <% if !@inspiration_entries.empty? %>
     <ul id="inspiration_entry_entries">
       <% @inspiration_entries.each do |inspiration_entry| %>
-        <li>
+        <li class="col-md-4">
           <%= render :partial => 'spree/inspiration_entries/inspiration_entry', :locals => {:inspiration_entry => inspiration_entry} %>
         </li>
       <% end %>
