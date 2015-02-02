@@ -7,6 +7,7 @@ class Spree::InspirationEntry < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :body
   validates_presence_of :summary
+  validates_presence_of :inspiration_entry_image
 
   default_scope { order("published_at DESC") }
   scope :visible, -> { where :visible => true }

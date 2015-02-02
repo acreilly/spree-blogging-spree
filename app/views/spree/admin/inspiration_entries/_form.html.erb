@@ -93,7 +93,7 @@
 <% end %>
 
 <%= form.field_container :summary do %>
-  <%= form.label :summary %><br />
+  <%= form.label :summary %> <span class="required">*</span><br />
   <%= form.text_area :summary, {:cols => 60, :rows => 4, :class => 'fullwidth', :id => 'inspiration_entry_summary'} %>
   <%= form.error_message_on :summary %>
 <% end %>
