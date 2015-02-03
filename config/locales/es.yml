@@ -1,11 +1,11 @@
 es:
   activerecord:
     models:
-      spree/inspiration_entry:
-        one: Inspiration Entry
-        other: Inspiration Entries
+      spree/blog_entry:
+        one: Blog Entry
+        other: Blog Entries
     attributes:
-      spree/inspiration_entry:
+      spree/blog_entry:
         title: Título
         body: Cuerpo
         summary: Sumario
@@ -34,24 +34,24 @@ es:
     website_url: Website URL
     google_plus_url: Google Plus URL
     bio_info: Bio
-    inspiration: "Inspiration"
-    inspiration_entries: "Entradas de Inspiration"
-    new_inspiration_entry: "Nuevo post"
-    no_inspiration_entries: "No existen post"
-    inspiration_entry_featured_image: Imagen Principal
+    blog: "Blog"
+    blog_entries: "Entradas de Blog"
+    new_blog_entry: "Nuevo post"
+    no_blog_entries: "No existen post"
+    blog_entry_featured_image: Imagen Principal
     posted_on: Publicado el
     posted_in: Publicado en
     tagged: Tagged
     by: por
-    inspiration_read_more: Leer más
-    inspiration_archive: Archivo
-    inspiration_tag: Tag
-    inspiration_category: Categoría
-    inspiration_author: Autor
+    blog_read_more: Leer más
+    blog_archive: Archivo
+    blog_tag: Tag
+    blog_category: Categoría
+    blog_author: Autor
     admin:
       tab:
-        inspiration_entries: Inspiration
-    inspiration:
+        blog_entries: Blog
+    blog:
       ago: atras
       categories: Categorías
       tags: Nube de tags
@@ -59,4 +59,4 @@ es:
       archive: Archivo
   time:
     formats:
-      inspiration_date: "%e %b %Y"
+      blog_date: "%e %b %Y"

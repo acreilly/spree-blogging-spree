@@ -4,11 +4,11 @@
 ru:
   activerecord:
     models:
-      spree/inspiration_entry:
-        one: Inspiration Entry
-        other: Inspiration Entries
+      spree/blog_entry:
+        one: Blog Entry
+        other: Blog Entries
     attributes:
-      spree/inspiration_entry:
+      spree/blog_entry:
         title: Заголовок
         body: Содержимое
         summary: Анонс
@@ -37,24 +37,24 @@ ru:
     website_url: Ссылка на сайт
     google_plus_url: Ссылка на профиль в Google Plus
     bio_info: Биография
-    inspiration: Блог
-    inspiration_entries: Записи блога
-    new_inspiration_entry: Новая запись
-    no_inspiration_entries: В блоге нет записей
-    inspiration_entry_featured_image: Изображение-обложка
+    blog: Блог
+    blog_entries: Записи блога
+    new_blog_entry: Новая запись
+    no_blog_entries: В блоге нет записей
+    blog_entry_featured_image: Изображение-обложка
     posted_on: Дата
     posted_in: Категория
     tagged: Ключевые слова
     by: by
-    inspiration_read_more: Читать полностью
-    inspiration_archive: Архив
-    inspiration_tag: Ключевое слово
-    inspiration_category: Категория
-    inspiration_author: Автор
+    blog_read_more: Читать полностью
+    blog_archive: Архив
+    blog_tag: Ключевое слово
+    blog_category: Категория
+    blog_author: Автор
     admin:
       tab:
-        inspiration_entries: Блог
-    inspiration:
+        blog_entries: Блог
+    blog:
       ago: назад
       categories: Категории
       tags: Ключевые слова
@@ -62,4 +62,4 @@ ru:
       archive: Архив
   time:
     formats:
-      inspiration_date: "%e %b %Y"
+      blog_date: "%e %b %Y"

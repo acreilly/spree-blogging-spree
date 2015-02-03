@@ -1,0 +1,15 @@
+
+<div class="blog_entry_summary">
+  <% unless blog_entry.blog_entry_image.nil? %>
+  <div class="blog_entry_image">
+    <%= image_tag blog_entry.blog_entry_image.attachment.url(:large) %>
+  </div>
+  <% end %>
+  <h3><%= link_to blog_entry.title, blog_entry_permalink(blog_entry) %></h3>
+  <p>
+    <%== blog_entry.entry_summary %>
+  </p>
+  <span class="blog_read_more"><%= link_to Spree.t(:blog_read_more), blog_entry_permalink(blog_entry) %></span>
+
+</div>
+

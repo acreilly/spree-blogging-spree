@@ -1,0 +1,7 @@
+<div class="blog_entry_details">
+  <% unless blog_entry.tag_list.empty? %>
+  <p>
+    <%= Spree.t(:tags) %>: <%= blog_entry_tag_list_html blog_entry %>.
+  </p>
+  <% end %>
+</div>

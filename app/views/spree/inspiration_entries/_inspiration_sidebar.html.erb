@@ -1,7 +1,0 @@
-<div id="inspiration_entry_sidebar">
-  <h2>Inspiration</h2>
-  <%= render 'spree/inspiration_entries/categories_list' %>
-  <%= render 'spree/inspiration_entries/tag_cloud' %>
-  <%= render 'spree/inspiration_entries/recent_inspiration_entries', recent_inspiration_entries: Spree::InspirationEntry.recent(10) %>
-  <%= render 'spree/inspiration_entries/news_archive', news_archive: Spree::InspirationEntry.organize_inspiration_entries %>
-</div>
