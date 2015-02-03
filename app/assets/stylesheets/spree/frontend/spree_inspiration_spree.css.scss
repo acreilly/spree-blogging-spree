@@ -2,17 +2,17 @@
 Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/frontend/all.css'
 */
-#inspiration{
+#blog{
   text-align: center;
-  font-style: italic;
+  font-weight: 800;
 }
-.inspiration_author_info {
+.blog_author_info {
   margin-bottom: 30px;
 }
-.inspiration_entry_body {
+.blog_entry_body {
   margin: 10px 0;
 }
-.inspiration_entry_summary{
+.blog_entry_summary{
   display: inline-block;
   text-align: center;
   margin-top: 30px;
@@ -23,7 +23,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
       color: #000;
     }
   }
-  .inspiration_read_more{
+  .blog_read_more{
     text-transform: uppercase;
     font-size: 12px;
     border-bottom: 1px solid #ff6565;
@@ -32,7 +32,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
     font-size: 12px;
     margin: 0;
   }
-  .inspiration_entry_image{
+  .blog_entry_image{
     width: 100%;
     height: 280px;
     overflow: hidden;
@@ -44,7 +44,7 @@ the installer will append this file to the app vendored assets here: 'vendor/ass
   }
 }
 
-ul#inspiration_entry_entries {
+ul#blog_entry_entries {
   list-style: none;
   margin: 0 auto;
   li {
@@ -52,46 +52,54 @@ ul#inspiration_entry_entries {
     margin: 20px 0;
   }
 }
-.inspiration_categories_list_wrapper{
+.blog_categories_list_wrapper{
   width: 100%;
   text-align: center;
-  ul.inspiration_categories_list{
+  ul.blog_categories_list{
     list-style: none;
     margin: 0 auto;
+    background-color: #ff6565;
+    padding: 10px 0;
     li{
       display: inline-block;
       margin: 0 20px;
       text-align: center;
+      a{
+        color: white;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 12px;
+      }
     }
   }
 }
-#inspiration_entry_entry{
+#blog_entry_entry{
   text-align: center;
   h1{
     margin: 0;
   }
-  .inspiration_entry_image{
+  .blog_entry_image{
     margin:10px 0;
   }
 }
-.inspiration_entry_body{
+.blog_entry_body{
   text-align: center;
   padding: 10px 190px;
   font-size: 12px;
 }
-.inspiration_entry_details{
+.blog_entry_details{
   p{
     font-size: 12px;
   }
 }
-#inspiration_entry_container{
+#blog_entry_container{
   margin: 50px 0;
 }
 #wrapper #sidebar{
   min-height: 650px;
 }
 /* tag cloud widget */
-.inspiration_tag_cloud {
+.blog_tag_cloud {
   margin-bottom: 10px;
 
   li { display: inline-block; }
@@ -101,8 +109,8 @@ ul#inspiration_entry_entries {
   .css4 { font-size: 1.8em; font-weight: bold; }
 }
 
-/* recent inspiration entries widget */
-.inspiration_entry_date {
+/* recent blog entries widget */
+.blog_entry_date {
   font-style: italic;
   font-size: 80%;
 }

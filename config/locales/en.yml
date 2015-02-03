@@ -4,11 +4,11 @@
 en:
   activerecord:
     models:
-      spree/inspiration_entry:
-        one: Inspiration Entry
-        other: Inspiration Entries
+      spree/blog_entry:
+        one: Blog Entry
+        other: Blog Entries
     attributes:
-      spree/inspiration_entry:
+      spree/blog_entry:
         title: Title
         body: Body
         summary: Summary
@@ -37,24 +37,24 @@ en:
     website_url: Website URL
     google_plus_url: Google Plus URL
     bio_info: Biographical info
-    inspiration: "Inspiration"
-    inspiration_entries: "Inspiration Entries"
-    new_inspiration_entry: "New Inspiration Entry"
-    no_inspiration_entries: "No inspiration entries found."
-    inspiration_entry_featured_image: Featured image
+    blog: "Blog"
+    blog_entries: "Blog Entries"
+    new_blog_entry: "New Blog Entry"
+    no_blog_entries: "No blog entries found."
+    blog_entry_featured_image: Featured image
     posted_on: Posted on
     posted_in: Posted in
     tagged: Tagged
     by: by
-    inspiration_read_more: Read more
-    inspiration_archive: Archive
-    inspiration_tag: Tag
-    inspiration_category: Category
-    inspiration_author: Author
+    blog_read_more: Read more
+    blog_archive: Archive
+    blog_tag: Tag
+    blog_category: Category
+    blog_author: Author
     admin:
       tab:
-        inspiration_entries: Inspiration entries
-    inspiration:
+        blog_entries: Blog entries
+    blog:
       ago: ago
       categories: Categories
       tags: Tag cloud
@@ -62,4 +62,4 @@ en:
       archive: Archive
   time:
     formats:
-      inspiration_date: "%B %e, %Y"
+      blog_date: "%B %e, %Y"

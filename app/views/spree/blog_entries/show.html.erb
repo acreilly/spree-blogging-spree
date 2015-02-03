@@ -1,0 +1,22 @@
+<div id="blog_entry_container">
+  <div id="blog_entry_entry" data-hook="blog_entry_entry">
+
+    <h1 id="blog"><%= @blog_entry.title %></h1>
+      <span class="blog_entry_date"><%= l(@blog_entry.published_at, :format => :blog_date) %></span>
+
+    <% unless @blog_entry.blog_entry_image.nil? %>
+    <div class="blog_entry_image">
+      <%= image_tag @blog_entry.blog_entry_image.attachment.url(:large) %>
+    </div>
+    <%= render :partial => 'spree/blog_entries/blog_entry_details', :locals => {:blog_entry => @blog_entry} %>
+    <% end %>
+
+    <div class="blog_entry_body">
+      <%== @blog_entry.body %>
+    </div>
+
+    <%= render :partial => 'spree/blog_entries/blog_pinterest_board', :locals => {:blog_entry => @blog_entry} %>
+  </div>
+
+  <%= render :partial => 'spree/blog_entries/comments', :locals => {:blog_entry => @blog_entry}  %>
+</div>

@@ -1,6 +1,0 @@
-<% content_for :sidebar do %>
-  <%= render :partial => 'spree/inspiration_entries/inspiration_sidebar' %>
-<% end %>
-
-<h1><%= Spree.t(:inspiration_archive) %>: <%= t("date.month_names")[params[:month].to_i] unless params[:month].blank? %> <%= params[:year].to_i %></h1>
-<%= render :partial => 'spree/inspiration_entries/inspiration_entries' %>

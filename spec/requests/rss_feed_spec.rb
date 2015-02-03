@@ -1,60 +1,60 @@
 require 'spec_helper'
 
 describe "RSS Feed" do
-  context "with a inspiration entry" do
+  context "with a blog entry" do
     before(:each) do
-      @inspiration_entry = create(:inspiration_entry,
-        :title => "First inspiration entry",
-        :body => "Body of the inspiration entry.",
-        :summary => "Summary of the inspiration entry.",
+      @blog_entry = create(:blog_entry,
+        :title => "First blog entry",
+        :body => "Body of the blog entry.",
+        :summary => "Summary of the blog entry.",
         :published_at => DateTime.new(2020, 3, 11))
-      @inspiration_entry.tag_list = "baz"
-      @inspiration_entry.save!
+      @blog_entry.tag_list = "baz"
+      @blog_entry.save!
     end
 
-    it "should show the inspiration entry details" do
-      visit "/inspiration/feed.rss"
-      find(:xpath, "//rss/channel/item/title").text.should == "First inspiration entry"
-      find(:xpath, "//rss/channel/item/content").text.should include("Body of the inspiration entry.")
-      find(:xpath, "//rss/channel/item/description").text.should include("Summary of the inspiration entry.")
-      find(:xpath, "//rss/channel/item/guid").text.should include("/inspiration/2020/03/11/first-inspiration-entry")
+    it "should show the blog entry details" do
+      visit "/blog/feed.rss"
+      find(:xpath, "//rss/channel/item/title").text.should == "First blog entry"
+      find(:xpath, "//rss/channel/item/content").text.should include("Body of the blog entry.")
+      find(:xpath, "//rss/channel/item/description").text.should include("Summary of the blog entry.")
+      find(:xpath, "//rss/channel/item/guid").text.should include("/blog/2020/03/11/first-blog-entry")
       find(:xpath, "//rss/channel/item/pubdate").text.should include("11 Mar 2020")
       find(:xpath, "//rss/channel/item/category").text.should == "baz"
     end
 
     it "should include links back to the orginal page in content" do
-      visit "/inspiration/feed.rss"
+      visit "/blog/feed.rss"
       find(:xpath, "//rss/channel/item/content").text.should include("first appeared on")
       find(:xpath, "//rss/channel/item/description").text.should include("Read the full article")
     end
 
   end
 
-  context "with multiple inspiration entries" do
+  context "with multiple blog entries" do
     before(:each) do
-      @inspiration_entry = create(:inspiration_entry,
-        :title => "First inspiration entry",
+      @blog_entry = create(:blog_entry,
+        :title => "First blog entry",
         :published_at => DateTime.new(2020, 3, 11))
 
-      @inspiration_entry2 = create(:inspiration_entry,
-        :title => "Another inspiration entry",
+      @blog_entry2 = create(:blog_entry,
+        :title => "Another blog entry",
         :published_at => DateTime.new(2020, 2, 4))
 
-      @inspiration_entry3 = create(:inspiration_entry,
-        :title => "Invisible inspiration entry",
+      @blog_entry3 = create(:blog_entry,
+        :title => "Invisible blog entry",
         :visible => false,
         :published_at => DateTime.new(2020, 3, 11))
     end
 
-    it "should include the visible inspiration entries" do
-      visit "/inspiration/feed.rss"
-      page.should have_content("First inspiration entry")
-      page.should have_content("Another inspiration entry")
+    it "should include the visible blog entries" do
+      visit "/blog/feed.rss"
+      page.should have_content("First blog entry")
+      page.should have_content("Another blog entry")
     end
 
-    it "should not include inspiration entries that are not visible" do
-      visit "/inspiration/feed.rss"
-      page.should_not have_content("Invisible inspiration entry")
+    it "should not include blog entries that are not visible" do
+      visit "/blog/feed.rss"
+      page.should_not have_content("Invisible blog entry")
     end
 
   end
