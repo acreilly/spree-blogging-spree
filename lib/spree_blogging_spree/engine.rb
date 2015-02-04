@@ -4,6 +4,9 @@ module SpreeBloggingSpree
     isolate_namespace Spree
     engine_name 'spree_blogging_spree'
 
+    initializer "spree.blogging_spree.preferences", :before => :load_config_initializers do |app|
+      preference :blog_alias, :string, default: 'blog'
+    end
     # use rspec for tests
     config.generators do |g|
       g.test_framework :rspec
